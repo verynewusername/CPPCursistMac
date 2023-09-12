@@ -10,17 +10,17 @@ void Cursist::addPercentages()
     }
 
     d_outResults << "    5 points:";
-    std::string percentagestoAdd;
 
     // get the results string length
     int resultsLength = d_groupofStudentBuffer.gradeString.length();
 
     double percentageFor8 = 0;
 
-    for (size_t idx = 0; idx < resultsLength; idx++)
+    for (int idx = 0; idx < resultsLength; idx++)
     {
-        d_outResults << "  ";
-        for (idx; idx < idx + 8 && idx < resultsLength; idx++)
+        d_outResults << "  "; // Initial spacing
+
+        for (; idx < idx + 8 && idx < resultsLength; idx++)
         {
             if (d_groupofStudentBuffer.gradeString[idx] == '1')
                 percentageFor8 += 1;
@@ -30,6 +30,7 @@ void Cursist::addPercentages()
                 percentageFor8 += 0;
         }
 
+        // Case for 3 - 5 points
         if (percentageFor8 > 3)
             percentageFor8 = 10 * (6 + (percentageFor8 - 3) / (5 - 3));
         else
