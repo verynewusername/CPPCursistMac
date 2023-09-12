@@ -6,6 +6,7 @@ void Cursist::outputResultsHelper()
         d_idBoxCounter = 1;
         d_studentsBuffer.clear();
         d_groupFound = false;
+        d_groupofStudentBuffer.gradeString.clear();
         d_outResults << d_lineBuffer << '\n';
         return;
     }

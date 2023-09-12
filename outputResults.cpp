@@ -5,7 +5,7 @@ void Cursist::outputResults()
     // Get the current date and time
     std::time_t now = std::time(nullptr);
 
-    d_outResults << "Cursist-Efe V1.0. ";
+    d_outResults << "Cursist-Efe V1.1. ";
     // Format the date and time
     char buffer[80];
     std::strftime(buffer, sizeof(buffer), "%a %b %d %H:%M:%S %Y", std::localtime(&now));
@@ -30,7 +30,10 @@ void Cursist::outputResults()
             if (d_lineBuffer == "-----------------------------------------------------------------")
             {
                 d_initialSkip = true;
+                d_outResults << d_lineBuffer << '\n';
+                // std::cout << "Initial skip done\n";
                 // std::cout << d_lineBuffer << '\n';
+                continue;
             }
             else
             {
@@ -50,7 +53,7 @@ void Cursist::outputResults()
     d_outResults << ghosts << " of the " << d_numberOfParticipants
         << " participants (" << std::setprecision(2)
         << static_cast<double>(ghosts) / d_numberOfParticipants * 100 
-        << "\%) did not submit exercises.\n";
+        << "\%) did not submit exercises.\n\n";
 
     d_inResults.close();
     d_outResults.close();
