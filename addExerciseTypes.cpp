@@ -2,6 +2,12 @@
 
 void Cursist::addExerciseTypes()
 {
+    if (!d_groupFound)
+    {
+        d_outResults << d_lineBuffer << '\n';
+        return;
+    }
+    
     int resultsLength = d_groupofStudentBuffer.gradeString.length();
 
     if (resultsLength == 0)

@@ -5,7 +5,7 @@ void Cursist::outputResults()
     // Get the current date and time
     std::time_t now = std::time(nullptr);
 
-    d_outResults << "Cursist-Efe V1.1. ";
+    d_outResults << "Cursist V4.06.00. ";
     // Format the date and time
     char buffer[80];
     std::strftime(buffer, sizeof(buffer), "%a %b %d %H:%M:%S %Y", std::localtime(&now));

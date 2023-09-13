@@ -9,7 +9,7 @@ int main(int arg, char **argv)
 {
     Cursist cursist;
 
-    cursist.runCursist();
+    cursist.runCursist(arg, argv);
 
     std::cout << "Done!\n";
 }

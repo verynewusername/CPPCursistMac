@@ -22,31 +22,41 @@ void Cursist::outputResultsHelper()
             getGroupofStudent();
             ++d_idBoxCounter;
             break;
-
-        case 4: // Percentages line
-            // std::cout << "4\n";
+        
+        case 3: //Ratings
+            addNumberRatings();
+            ++d_idBoxCounter;
+            break;
+        case 5: // Percentages line
             addPercentages();
-            // d_outResults << d_lineBuffer << '\n';
-
             ++d_idBoxCounter;
             break;
 
-        case 7: // question numberings line
+        // case 6: 
+        //     d_outResults << '\n'; // add a newline
+        //     ++d_idBoxCounter;
+
+        case 7: // 1,2,3 written line for tenths
+            addTenths();
+            ++d_idBoxCounter;
+            break;
+        case 8: // question numberings line
             // std::cout << "7\n";
             addQuestionNumberings();
             ++d_idBoxCounter;
             break;
 
-        case 8: // results line (your ratings)
+        case 9: // results line (your ratings)
             addRatings();
             ++d_idBoxCounter;
             break;
 
-        case 9: // .....+++ {...} (exercise types)
+        case 10: // .....+++ {...} (exercise types)
             addExerciseTypes();
             ++d_idBoxCounter;
             break;
         default:
+            // d_outResults << d_lineBuffer << d_idBoxCounter << '\n';
             d_outResults << d_lineBuffer << '\n';
             ++d_idBoxCounter;
             break;

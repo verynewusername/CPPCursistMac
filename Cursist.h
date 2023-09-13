@@ -35,7 +35,7 @@ public:
     Cursist();              // Constructor
     ~Cursist() {};          // Destructor
 
-    void runCursist();      // Run the cursist program
+    void runCursist(int arg, char **argv);      // Run the cursist program
 
 private:
 
@@ -57,6 +57,8 @@ private:
     void addRatings();      // Add the ratings to the output file
     void addExerciseTypes(); // Add the exercise types to the output file
     void getGroupofStudent(); // Get the group of the student
+    void addTenths();       // Add the tenths to the output file
+    void addNumberRatings();
 
     void swapFilesStudents();// Swap the input and output files for students
     void swapFilesResults(); // Swap the input and output files for results

@@ -8,8 +8,16 @@ void Cursist::addRatings()
         return;
     }
 
+    int length = d_groupofStudentBuffer.gradeString.length();
 
-    d_outResults << d_groupofStudentBuffer.gradeString 
-        << " (your ratings)" << '\n';
+    for (int idx = 0; idx < length; idx++)
+    {
+        if (d_groupofStudentBuffer.gradeString[idx] == '.')
+            d_outResults << ' ';
+        else
+            d_outResults << d_groupofStudentBuffer.gradeString[idx];
+    }
+
+    d_outResults << " (your ratings)" << '\n';
 
 }
