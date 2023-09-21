@@ -27,6 +27,15 @@ void Cursist::outputStudentsHelper()
             ++d_idBoxCounter;
             d_outStudents << d_lineBuffer << '\n';
             break;
+        case 3:
+            if (d_lineBuffer[0] == '=')
+            {
+                d_outStudents << d_lineBuffer << '\n';
+                ++d_idBoxCounter;
+                break;
+            }
+            else
+                [[fallthrough]];        
         default:
             if (resultsField(d_lineBuffer))
             {

@@ -26,6 +26,7 @@ class Cursist
     std::vector<Student> d_studentsBuffer;  // Buffer for the students
     int d_idBoxCounter;                     // Counter for the id box
     bool d_groupFlag;                       // Flag for the group
+    bool d_extranotesFlag;                    // Flag for the extranotes
 
     size_t d_numberOfParticipants;  // Number of participants
     CPPGroup d_groupofStudentBuffer;// Buffer for the group of the student

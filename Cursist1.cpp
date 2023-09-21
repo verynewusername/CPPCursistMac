@@ -10,6 +10,7 @@ Cursist::Cursist()
     d_initialSkip(false),
     d_idBoxCounter(0),
     d_groupFlag(false),
+    d_extranotesFlag(false),
     d_numberOfParticipants(0)
 {
 
