@@ -8,5 +8,12 @@ void Cursist::getNumberofParticipants(std::string &input)
     while (iss >> lastWord) {}
     // std::cout << lastWord << '\n';
 
-    d_numberOfParticipants = std::stoi(lastWord);
+    try 
+    {
+        d_numberOfParticipants = std::stoi(lastWord);
+    }
+    catch (...) 
+    {
+        d_numberOfParticipants = 0;
+    }
 }
