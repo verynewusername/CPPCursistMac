@@ -4,12 +4,14 @@
 #include <string>    // std::string
 #include <vector>    // std::vector
 
-struct Student {
+struct Student 
+{
     size_t studentID;
     std::string fullName;
 };
 
-struct CPPGroup {
+struct CPPGroup 
+{
     std::vector<Student> students;
     std::string gradeString;
 };

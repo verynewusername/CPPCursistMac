@@ -8,7 +8,7 @@ void Cursist::addTenths()
         return;
     }
 
-    size_t length = d_groupofStudentBuffer.gradeString.length();
+    size_t length = d_tempGrades.length();
     size_t tenths = length / 10;
 
     for (size_t idx = 0; idx < tenths; idx++)

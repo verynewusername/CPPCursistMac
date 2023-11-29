@@ -19,7 +19,7 @@ void Cursist::outputResultsHelper()
             // std::cout << "2\n";
             d_outResults << d_lineBuffer << '\n';
             parseStudents(iss);
-            getGroupofStudent();
+            getGradeofStudent();
             ++d_idBoxCounter;
             break;
         

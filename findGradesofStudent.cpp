@@ -1,8 +1,8 @@
 #include "Cursist.h"
 
-std::vector<std::string> Cursist::checkGroup(std::vector<Student> &students)
+std::vector<std::string> Cursist::findGradesofStudent(Student toSearch)
 {
-    if (students.empty())
+    if (toSearch.studentID == 0)
         return {};
 
     std::vector<std::string> grades = {};
@@ -12,7 +12,7 @@ std::vector<std::string> Cursist::checkGroup(std::vector<Student> &students)
         for (auto& student : group.students)
         {
             //check if the student is the same with the first student in students
-            if (student.studentID == students.at(0).studentID)
+            if (student.studentID == toSearch.studentID)
                 grades.push_back(group.gradeString);
         }
     }

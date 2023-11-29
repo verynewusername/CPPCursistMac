@@ -12,11 +12,13 @@ void Cursist::addPercentages()
     d_outResults << "    5 points:";
 
     // get the results string length
-    int resultsLength = d_groupofStudentBuffer.gradeString.length();
+    int resultsLength = d_tempGrades.length();
 
     double percentageFor8 = 0;
     double basicScore = 0;
     double advancedScore = 0;
+
+    bool first = true;
 
     for (int idx = 0; idx < resultsLength;)
     {
@@ -28,12 +30,12 @@ void Cursist::addPercentages()
 
         while (idx < temp && idx < resultsLength)
         {
-            if (d_groupofStudentBuffer.gradeString.at(idx) == '1')
+            if (d_tempGrades.at(idx) == '1')
                 basicScore += 1;
-            else if (d_groupofStudentBuffer.gradeString.at(idx) == '?')
+            else if (d_tempGrades.at(idx) == '?')
                 basicScore += 0.5;
 
-            // std::cout << "At: " << idx << " |" << d_groupofStudentBuffer.gradeString.at(idx) << "|\n";
+            // std::cout << "At: " << idx << " |" << d_tempGrades.at(idx) << "|\n";
             ++idx;
         }
 
@@ -47,15 +49,15 @@ void Cursist::addPercentages()
 
         while (idx < temp && idx < resultsLength)
         {
-            if (d_groupofStudentBuffer.gradeString.at(idx) == '1')
+            if (d_tempGrades.at(idx) == '1')
                 advancedScore += 1;
-            else if (d_groupofStudentBuffer.gradeString.at(idx)  == '?')
+            else if (d_tempGrades.at(idx)  == '?')
                 advancedScore += 0.5;
 
             ++idx;
         }
 
-        // std::cout << "For the grade String: |" << d_groupofStudentBuffer.gradeString << "|\n";
+        // std::cout << "For the grade String: |" << d_tempGrades << "|\n";
         // std::cout << "Basic score: " << basicScore << '\n';
         // std::cout << "Advanced score: " << advancedScore << '\n';
 
@@ -66,13 +68,23 @@ void Cursist::addPercentages()
             percentageFor8 = 100;
 
         if (percentageFor8 == 100)
-            d_outResults << " "; // Initial spacing
+        {
+            if (first)
+                d_outResults << " "; // Initial spacing
+        }
+        else if (percentageFor8 == 0)
+            if (first)
+                d_outResults << "   "; // Initial spacing
+            else
+                d_outResults << "  "; // Initial spacing
         else 
             d_outResults << "  "; // Initial spacing
 
-        // round to nearest int
-        d_outResults << static_cast<int>(std::round(percentageFor8)) << "\%,";
 
+        // round to nearest int
+        // int roundedDownValue = static_cast<int>(std::round(percentageFor8));
+        d_outResults << static_cast<int>(std::floor(percentageFor8)) << "\%,";
+        first = false;
     }
 
     d_outResults << '\n';

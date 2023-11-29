@@ -8,7 +8,7 @@ void Cursist::addExerciseTypes()
         return;
     }
     
-    int resultsLength = d_groupofStudentBuffer.gradeString.length();
+    int resultsLength = d_tempGrades.length();
 
     if (resultsLength == 0)
         resultsLength = 8;

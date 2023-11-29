@@ -32,6 +32,8 @@ class Cursist
     CPPGroup d_groupofStudentBuffer;// Buffer for the group of the student
     bool d_groupFound;                // Flag for the group found
 
+    std::string d_tempGrades;       // Buffer for the grades
+
 public:
     Cursist();              // Constructor
     ~Cursist() {};          // Destructor
@@ -48,7 +50,7 @@ private:
     void outputStudents();  // Output the refreshed students to the output file
     void outputStudentsHelper(); // Helper function for outputStudents
     // Check the group of the student
-    std::string checkGroup(std::vector<Student> &students); 
+    std::vector<std::string> checkGroup(std::vector<Student> &students); 
     bool resultsField(std::string &input); // check if line is a results field
 
     void outputResults();   // Output the new results to the output file
@@ -57,9 +59,13 @@ private:
     void addQuestionNumberings(); // Add the question numberings to the output file
     void addRatings();      // Add the ratings to the output file
     void addExerciseTypes(); // Add the exercise types to the output file
-    void getGroupofStudent(); // Get the group of the student
+    void getGradeofStudent(); // Get the group of the student
     void addTenths();       // Add the tenths to the output file
     void addNumberRatings();
+
+    std::vector<std::string> findGradesofStudent(Student student); // Find the grade of the student
+
+    std::string filterBest(std::vector<std::string> &students); // Filter the best students
 
     void swapFilesStudents();// Swap the input and output files for students
     void swapFilesResults(); // Swap the input and output files for results

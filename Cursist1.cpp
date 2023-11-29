@@ -11,7 +11,8 @@ Cursist::Cursist()
     d_idBoxCounter(0),
     d_groupFlag(false),
     d_extranotesFlag(false),
-    d_numberOfParticipants(0)
+    d_numberOfParticipants(0),
+    d_groupFound(false)
 {
 
 }

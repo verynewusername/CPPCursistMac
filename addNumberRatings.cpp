@@ -11,7 +11,7 @@ void Cursist::addNumberRatings()
     d_outResults << "  Scores per set: ";
 
     // get the results string length
-    int resultsLength = d_groupofStudentBuffer.gradeString.length();
+    int resultsLength = d_tempGrades.length();
 
     double basicCorrect = 0;
     double advancedCorrect = 0;
@@ -25,12 +25,12 @@ void Cursist::addNumberRatings()
 
         while (idx < temp && idx < resultsLength)
         {
-            if (d_groupofStudentBuffer.gradeString.at(idx) == '1')
+            if (d_tempGrades.at(idx) == '1')
                 basicCorrect += 1;
-            else if (d_groupofStudentBuffer.gradeString.at(idx) == '?')
+            else if (d_tempGrades.at(idx) == '?')
                 basicCorrect += 0.5;
 
-            // std::cout << "At: " << idx << " |" << d_groupofStudentBuffer.gradeString.at(idx) << "|\n";
+            // std::cout << "At: " << idx << " |" << d_tempGrades.at(idx) << "|\n";
             ++idx;
         }
 
@@ -38,9 +38,9 @@ void Cursist::addNumberRatings()
 
         while (idx < temp && idx < resultsLength)
         {
-            if (d_groupofStudentBuffer.gradeString.at(idx) == '1')
+            if (d_tempGrades.at(idx) == '1')
                 advancedCorrect += 1;
-            else if (d_groupofStudentBuffer.gradeString.at(idx)  == '?')
+            else if (d_tempGrades.at(idx)  == '?')
                 advancedCorrect += 0.5;
 
             ++idx;
